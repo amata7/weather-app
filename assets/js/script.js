@@ -41,33 +41,69 @@ function renderCurrentWeather(weather) {
 }
 
 function fetchFiveDayWeather(query) {
-    var url5 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + 
+    var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + 
     query +
     '&units=imperial&appid=2095a6157c020cb112f39f8fb6535387';
 
-    fetch(url5)
+    fetch(url)
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => renderFiveDayWeather(data));
 }
 
 function renderFiveDayWeather(weather) {
     console.log(weather);
+        var date1 = document.querySelector('#date1');
+        date1.textContent = weather.list[0].dt_txt;
 
-    for (let i = 2; i < 40; i = i + 8) {
-        var city5 = document.querySelector('#city5');
-        city5.textContent = weather.city.name + ' ' + weather.list[i].dt_txt;
+        var temp1 = document.querySelector('#temp1');
+        temp1.textContent = weather.list[0].main.temp + ' °F';
 
-console.log(i);
-        // var icon5 = document.querySelector('#icon5');
-        // icon5.textContent = weather.list[i].weather[0].icon;
+        var humidity1 = document.querySelector('#humidity1');
+        humidity1.textContent = weather.list[0].main.humidity + ' %';
+
+
+        var date2 = document.querySelector('#date2');
+        date2.textContent = weather.list[8].dt_txt;
+
+        var temp2 = document.querySelector('#temp2');
+        temp2.textContent = weather.list[8].main.temp + ' °F';
+
+        var humidity2 = document.querySelector('#humidity2');
+        humidity2.textContent = weather.list[8].main.humidity + ' %';
+
+
+        var date3 = document.querySelector('#date3');
+        date3.textContent = weather.list[16].dt_txt;
+
+        var temp3 = document.querySelector('#temp3');
+        temp3.textContent = weather.list[16].main.temp + ' °F';
+
+        var humidity3 = document.querySelector('#humidity3');
+        humidity3.textContent = weather.list[16].main.humidity + ' %';
+        
+
+
+        var date4 = document.querySelector('#date4');
+        date4.textContent = weather.list[24].dt_txt;
+
+        var temp4 = document.querySelector('#temp4');
+        temp4.textContent = weather.list[24].main.temp + ' °F';
+
+        var humidity4 = document.querySelector('#humidity4');
+        humidity4.textContent = weather.list[24].main.humidity + ' %';
+
+
+
+        var date5 = document.querySelector('#date5');
+        date5.textContent = weather.list[32].dt_txt;
 
         var temp5 = document.querySelector('#temp5');
-        temp5.textContent = weather.list[i].main.temp + ' °F';
+        temp5.textContent = weather.list[32].main.temp + ' °F';
 
         var humidity5 = document.querySelector('#humidity5');
-        humidity5.textContent = weather.list[i].main.humidity + ' %';
+        humidity5.textContent = weather.list[32].main.humidity + ' %';
         }
-    }
+
 
 function submitHandler() {
     event.preventDefault();
@@ -76,7 +112,10 @@ function submitHandler() {
     if (searchInput) {
         fetchCurrentWeather(searchInput);
         fetchFiveDayWeather(searchInput);
+    } else {
+        alert('Please enter a valid city name');
     }
 }
 
 formEl.addEventListener('submit', submitHandler);
+
