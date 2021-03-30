@@ -2,10 +2,7 @@ var formEl = document.querySelector('#formEl');
 var query = document.querySelector('.searchBar.text');
 var searchBtn = document.querySelector('#search');
 var searchBar = document.querySelector('#searchBar')
-searchBtn.onclick = ()=>{
-
-    console.log(query);
-}
+var recentSearches = document.querySelector('#recentSearches');
 
 function fetchCurrentWeather(query) {
     var url = 'https://api.openweathermap.org/data/2.5/find?q=' + 
@@ -51,7 +48,6 @@ function fetchFiveDayWeather(query) {
 }
 
 function renderFiveDayWeather(weather) {
-    console.log(weather);
         var date1 = document.querySelector('#date1');
         date1.textContent = weather.list[0].dt_txt;
 
@@ -112,10 +108,18 @@ function submitHandler() {
     if (searchInput) {
         fetchCurrentWeather(searchInput);
         fetchFiveDayWeather(searchInput);
+        var recent = document.createElement('a');
+        recent.classList = 'list-group-item border';
+
+        recent.textContent = searchInput;
+        console.log(searchInput);
+        recentSearches.appendChild(recent);
     } else {
         alert('Please enter a valid city name');
     }
 }
+
+
 
 formEl.addEventListener('submit', submitHandler);
 

@@ -20,32 +20,25 @@
     </header>
     <main class='row'>
         <aside class='bg-light col-4'>
-                <h2>Search for a city:</h2>
+                <h2 class='formSearch'>Search for a city:</h2>
                 <form id = 'formEl'>
                     <input name='searchBar' id='searchBar' type='text' class='searchBar'>
                     <button type='submit' id='search' class='btn btn-primary'>Search</button>
                 </form>
-            <section>
+            <section id= 'recentEl'>
                 <h3>Recent Searches</h3>
-                <ul class='list-group list-group-flush'>
-                    <li class='list-group-item border'>item1</li>
-                    <li class='list-group-item border'>item2</li>
-                    <li class='list-group-item border'>item3</li>
-                    <li class='list-group-item border'>item4</li>
-                    <li class='list-group-item border'>item5</li>
-                    <li class='list-group-item border'>item6</li>
-                </ul>
+                <ul id='recentSearches' class='list-group list-group-flush'></ul>
             </section>
         </aside>
         <article class='col-8'>    
-            <section id='weather-response'>
+            <section id='weather-response' class= 'bg-light card-body'>
                 <h1 id='cityCurrent'></h1>
                 <h2 id='tempCurrent'></h2>
                 <h2 id='humidityCurrent'></h2>
                 <h2 id='windCurrent'></h2>
                 <h2 id='uvCurrent'></h2>
             </section>
-            <section class='row'>
+            <section class='bg-light row'>
                 <h1>5-Day forecast</h1>
                 <div class='col-2'>
                     <h2 id='date1'></h2>

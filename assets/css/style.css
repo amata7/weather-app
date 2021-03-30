@@ -5,11 +5,6 @@
     text-align: center;
 }
 
-.card {
-    width: 50px;
-    background: gray;
-    height: 50px;
-}
 
 aside {
     background: black;
@@ -26,10 +21,24 @@ aside {
 }
 
 #weather-response {
-    background: lightblue;
+    
     height:50%;
 }
 
 .col-2 {
     font-size: 14px;
+}
+
+form {
+    height:15%;
+}
+
+.formSearch {
+    height: 25px;
+    align-content: center;
+    justify-content: center;
+}
+
+h3 {
+    padding-top: 20px;
 }
