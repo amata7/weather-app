@@ -1,0 +1,31 @@
+.title {
+    height: 60px;
+    font-size: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.card {
+    width: 50px;
+    background: gray;
+    height: 50px;
+}
+
+aside {
+    background: black;
+    width:30%;
+    display: inline-block;
+}
+
+.searchBar {
+    width:70%;
+}
+
+.btn {
+    font-size: 10px;
+}
+
+#weather-response {
+    background: lightblue;
+    height:50%;
+}
