@@ -20,18 +20,18 @@
     </header>
     <main class='row'>
         <aside class='bg-info col-3 p-2 border border-primary'>
-                <h4 class='formSearch mb-2'>Search for a city:</h4>
+                <h4 class='formSearch mb-2 mt-2'>Search for a city:</h4>
                 <form id = 'formEl'>
                     <input name='searchBar' id='searchBar' type='text' class='searchBar'>
                     <button type='submit' id='search' class='btn btn-primary'>Search</button>
                 </form>
-            <section id= 'recentEl'>
+            <section id='recentEl' class="mt-2">
                 <h4>Recent Searches: </h4>
                 <ul id='recentSearches' class='list-group list-group-flush'></ul>
             </section>
         </aside>
         <article class='col-9'>    
-            <section id='weather-response' class='bg-info row p-2 border border-primary'>
+            <section id='weather-response' class='bg-info row border border-primary'>
                 <h3><u>Today's Forecast</u></h3>
                 <h4 id='cityCurrent'></h4>
                 <h5 id='tempCurrent'></h5>
@@ -43,31 +43,31 @@
                 <h3><u>5-Day forecast</u></h3>
                 <div class='col'>
                     <h5 id='date1'></h5>
-                    <img src='https://openweathermap.org/img/wn/04d.png' id='icon1'></img>
+                    <img id='icon1'></img>
                     <h5 id='temp1'></h5>
                     <h5 id='humidity1'></h5>
                 </div>
                 <div class='col'>
                     <h5 id='date2'></h5>
-                    <i id='icon2' class ='fab'></i>
+                    <img id='icon2'></img>
                     <h5 id='temp2'></h5>
                     <h5 id='humidity2'></h5>
                 </div>
                 <div class='col'>
                     <h5 id='date3'></h5>
-                    <i id='icon3' class ='fab'></i>
+                    <img id='icon3'></img>
                     <h5 id='temp3'></h5>
                     <h5 id='humidity3'></h5>
                 </div>
                 <div class='col'>
                     <h5 id='date4'></h5>
-                    <i id='icon4' class ='fab'></i>
+                    <img id='icon4'></img>
                     <h5 id='temp4'></h5>
                     <h5 id='humidity4'></h5>
                 </div>
                 <div class='col'>
                     <h5 id='date5'></h5>
-                    <i id='icon5' class ='fab'></i>
+                    <img id='icon5'></img>
                     <h5 id='temp5'></h5>
                     <h5 id='humidity5'></h5>
                 </div>

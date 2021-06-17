@@ -17,14 +17,13 @@ function fetchCurrentWeather(query) {
 }
 
 function renderCurrentWeather(weather) {
-  console.log(weather);
   var resultsContainer = document.querySelector("#weather-response");
 
   var cityCurrent = document.querySelector("#cityCurrent");
   cityCurrent.textContent = weather.list[0].name;
 
   var tempCurrent = document.querySelector("#tempCurrent");
-  tempCurrent.textContent = "Temp " + weather.list[0].main.temp + " °F";
+  tempCurrent.textContent = "Temp: " + weather.list[0].main.temp + " °F";
 
   var humidityCurrent = document.querySelector("#humidityCurrent");
   humidityCurrent.textContent =
@@ -60,11 +59,9 @@ function renderFiveDayWeather(weather) {
   var date1 = document.querySelector("#date1");
   date1.textContent = weather.list[0].dt_txt;
 
-  console.log(icon1);
-  //   document.getElementById("#icon").src =
-  //     "https://openweathermap.org/img/wn" +
-  //     weather.list[0].weather[0].icon +
-  //     ".png";
+  var icon1 = weather.list[0].weather[0].icon;
+  document.getElementById("icon1").src =
+    "http://openweathermap.org/img/wn/" + icon1 + "@2x.png";
 
   var temp1 = document.querySelector("#temp1");
   temp1.textContent = weather.list[0].main.temp + " °F";
@@ -75,6 +72,10 @@ function renderFiveDayWeather(weather) {
   var date2 = document.querySelector("#date2");
   date2.textContent = weather.list[8].dt_txt;
 
+  var icon2 = weather.list[8].weather[0].icon;
+  document.getElementById("icon2").src =
+    "http://openweathermap.org/img/wn/" + icon2 + "@2x.png";
+
   var temp2 = document.querySelector("#temp2");
   temp2.textContent = weather.list[8].main.temp + " °F";
 
@@ -83,6 +84,10 @@ function renderFiveDayWeather(weather) {
 
   var date3 = document.querySelector("#date3");
   date3.textContent = weather.list[16].dt_txt;
+
+  var icon3 = weather.list[16].weather[0].icon;
+  document.getElementById("icon3").src =
+    "http://openweathermap.org/img/wn/" + icon3 + "@2x.png";
 
   var temp3 = document.querySelector("#temp3");
   temp3.textContent = weather.list[16].main.temp + " °F";
@@ -93,6 +98,10 @@ function renderFiveDayWeather(weather) {
   var date4 = document.querySelector("#date4");
   date4.textContent = weather.list[24].dt_txt;
 
+  var icon4 = weather.list[24].weather[0].icon;
+  document.getElementById("icon4").src =
+    "http://openweathermap.org/img/wn/" + icon4 + "@2x.png";
+
   var temp4 = document.querySelector("#temp4");
   temp4.textContent = weather.list[24].main.temp + " °F";
 
@@ -101,6 +110,10 @@ function renderFiveDayWeather(weather) {
 
   var date5 = document.querySelector("#date5");
   date5.textContent = weather.list[32].dt_txt;
+
+  var icon5 = weather.list[32].weather[0].icon;
+  document.getElementById("icon5").src =
+    "http://openweathermap.org/img/wn/" + icon5 + "@2x.png";
 
   var temp5 = document.querySelector("#temp5");
   temp5.textContent = weather.list[32].main.temp + " °F";
