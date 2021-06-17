@@ -3,7 +3,7 @@ var query = document.querySelector(".searchBar.text");
 var searchBtn = document.querySelector("#search");
 var searchBar = document.querySelector("#searchBar");
 var recentSearches = document.querySelector("#recentSearches");
-var icon = document.querySelector("#icon");
+var icon1 = document.getElementById("icon1");
 
 function fetchCurrentWeather(query) {
   var url =
@@ -60,12 +60,11 @@ function renderFiveDayWeather(weather) {
   var date1 = document.querySelector("#date1");
   date1.textContent = weather.list[0].dt_txt;
 
-  document.getElementById("#icon").src =
-    "https://openweathermap.org/img/wn" +
-    weather.list[0].weather[0].icon +
-    ".png";
-  console.log(icon);
-  console.log(icon.src);
+  console.log(icon1);
+  //   document.getElementById("#icon").src =
+  //     "https://openweathermap.org/img/wn" +
+  //     weather.list[0].weather[0].icon +
+  //     ".png";
 
   var temp1 = document.querySelector("#temp1");
   temp1.textContent = weather.list[0].main.temp + " °F";
