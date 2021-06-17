@@ -57,7 +57,11 @@ function fetchFiveDayWeather(query) {
 
 function renderFiveDayWeather(weather) {
   var date1 = document.querySelector("#date1");
-  date1.textContent = weather.list[0].dt_txt;
+  const year1 = weather.list[0].dt_txt.substr(0, 4);
+  const month1 = weather.list[0].dt_txt.substr(5, 2);
+  const day1 = weather.list[0].dt_txt.substr(8, 2);
+  const formatted1 = month1 + "/" + day1 + "/" + year1;
+  date1.textContent = formatted1;
 
   var icon1 = weather.list[0].weather[0].icon;
   document.getElementById("icon1").src =
@@ -67,10 +71,14 @@ function renderFiveDayWeather(weather) {
   temp1.textContent = weather.list[0].main.temp + " °F";
 
   var humidity1 = document.querySelector("#humidity1");
-  humidity1.textContent = weather.list[0].main.humidity + " %";
+  humidity1.textContent = "Humidity: " + weather.list[0].main.humidity + " %";
 
   var date2 = document.querySelector("#date2");
-  date2.textContent = weather.list[8].dt_txt;
+  const year2 = weather.list[8].dt_txt.substr(0, 4);
+  const month2 = weather.list[8].dt_txt.substr(5, 2);
+  const day2 = weather.list[8].dt_txt.substr(8, 2);
+  const formatted2 = month2 + "/" + day2 + "/" + year2;
+  date2.textContent = formatted2;
 
   var icon2 = weather.list[8].weather[0].icon;
   document.getElementById("icon2").src =
@@ -80,10 +88,14 @@ function renderFiveDayWeather(weather) {
   temp2.textContent = weather.list[8].main.temp + " °F";
 
   var humidity2 = document.querySelector("#humidity2");
-  humidity2.textContent = weather.list[8].main.humidity + " %";
+  humidity2.textContent = "Humidity: " + weather.list[8].main.humidity + " %";
 
   var date3 = document.querySelector("#date3");
-  date3.textContent = weather.list[16].dt_txt;
+  const year3 = weather.list[16].dt_txt.substr(0, 4);
+  const month3 = weather.list[16].dt_txt.substr(5, 2);
+  const day3 = weather.list[16].dt_txt.substr(8, 2);
+  const formatted3 = month3 + "/" + day3 + "/" + year3;
+  date3.textContent = formatted3;
 
   var icon3 = weather.list[16].weather[0].icon;
   document.getElementById("icon3").src =
@@ -93,10 +105,14 @@ function renderFiveDayWeather(weather) {
   temp3.textContent = weather.list[16].main.temp + " °F";
 
   var humidity3 = document.querySelector("#humidity3");
-  humidity3.textContent = weather.list[16].main.humidity + " %";
+  humidity3.textContent = "Humidity: " + weather.list[16].main.humidity + " %";
 
   var date4 = document.querySelector("#date4");
-  date4.textContent = weather.list[24].dt_txt;
+  const year4 = weather.list[24].dt_txt.substr(0, 4);
+  const month4 = weather.list[24].dt_txt.substr(5, 2);
+  const day4 = weather.list[24].dt_txt.substr(8, 2);
+  const formatted4 = month4 + "/" + day4 + "/" + year4;
+  date4.textContent = formatted4;
 
   var icon4 = weather.list[24].weather[0].icon;
   document.getElementById("icon4").src =
@@ -106,10 +122,14 @@ function renderFiveDayWeather(weather) {
   temp4.textContent = weather.list[24].main.temp + " °F";
 
   var humidity4 = document.querySelector("#humidity4");
-  humidity4.textContent = weather.list[24].main.humidity + " %";
+  humidity4.textContent = "Humidity: " + weather.list[24].main.humidity + " %";
 
   var date5 = document.querySelector("#date5");
-  date5.textContent = weather.list[32].dt_txt;
+  const year5 = weather.list[32].dt_txt.substr(0, 4);
+  const month5 = weather.list[32].dt_txt.substr(5, 2);
+  const day5 = weather.list[32].dt_txt.substr(8, 2);
+  const formatted5 = month5 + "/" + day5 + "/" + year5;
+  date5.textContent = formatted5;
 
   var icon5 = weather.list[32].weather[0].icon;
   document.getElementById("icon5").src =
@@ -119,7 +139,7 @@ function renderFiveDayWeather(weather) {
   temp5.textContent = weather.list[32].main.temp + " °F";
 
   var humidity5 = document.querySelector("#humidity5");
-  humidity5.textContent = weather.list[32].main.humidity + " %";
+  humidity5.textContent = "Humidity: " + weather.list[32].main.humidity + " %";
 }
 
 function submitHandler() {
