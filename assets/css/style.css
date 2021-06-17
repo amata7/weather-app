@@ -1,44 +1,42 @@
 .title {
-    height: 60px;
-    font-size: 40px;
-    margin: auto;
-    text-align: center;
+  height: 60px;
+  font-size: 40px;
+  margin: auto;
+  text-align: center;
 }
 
-
 aside {
-    background: black;
-    width:30%;
-    display: inline-block;
+  background: black;
+  width: 30%;
+  display: inline-block;
 }
 
 .searchBar {
-    width:70%;
+  width: 70%;
 }
 
 .btn {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 #weather-response {
-    
-    height:50%;
+  height: 50%;
 }
 
 .col-2 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 form {
-    height:15%;
+  height: 15%;
 }
 
 .formSearch {
-    height: 25px;
-    align-content: center;
-    justify-content: center;
+  height: 25px;
+  align-content: center;
+  justify-content: center;
 }
 
 h3 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
