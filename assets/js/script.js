@@ -17,6 +17,17 @@ function fetchCurrentWeather(query) {
 }
 
 function renderCurrentWeather(weather) {
+  var url =
+    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    weather.list[0].coord.lat +
+    "&lon=" +
+    weather.list[0].coord.lon +
+    "&appid=2095a6157c020cb112f39f8fb6535387";
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => fetchUV(data));
+
   var resultsContainer = document.querySelector("#weather-response");
 
   var cityCurrent = document.querySelector("#cityCurrent");
@@ -55,7 +66,14 @@ function fetchFiveDayWeather(query) {
     .then((data) => renderFiveDayWeather(data));
 }
 
+function fetchUV(data) {
+  console.log(data);
+  var uvCurrent = document.querySelector("#uvCurrent");
+  uvCurrent.textContent = "Current UV Index: " + data.current.uvi;
+}
+
 function renderFiveDayWeather(weather) {
+  console.log(weather);
   var date1 = document.querySelector("#date1");
   const year1 = weather.list[0].dt_txt.substr(0, 4);
   const month1 = weather.list[0].dt_txt.substr(5, 2);
