@@ -67,13 +67,11 @@ function fetchFiveDayWeather(query) {
 }
 
 function fetchUV(data) {
-  console.log(data);
   var uvCurrent = document.querySelector("#uvCurrent");
   uvCurrent.textContent = "Current UV Index: " + data.current.uvi;
 }
 
 function renderFiveDayWeather(weather) {
-  console.log(weather);
   var date1 = document.querySelector("#date1");
   const year1 = weather.list[0].dt_txt.substr(0, 4);
   const month1 = weather.list[0].dt_txt.substr(5, 2);
@@ -84,6 +82,10 @@ function renderFiveDayWeather(weather) {
   var icon1 = weather.list[0].weather[0].icon;
   document.getElementById("icon1").src =
     "http://openweathermap.org/img/wn/" + icon1 + "@2x.png";
+
+  const box1 = document.getElementById("box1");
+  box1.classList.add("border");
+  box1.classList.add("border-light");
 
   var temp1 = document.querySelector("#temp1");
   temp1.textContent = weather.list[0].main.temp + " °F";
@@ -97,6 +99,10 @@ function renderFiveDayWeather(weather) {
   const day2 = weather.list[8].dt_txt.substr(8, 2);
   const formatted2 = month2 + "/" + day2 + "/" + year2;
   date2.textContent = formatted2;
+
+  const box2 = document.getElementById("box2");
+  box2.classList.add("border");
+  box2.classList.add("border-light");
 
   var icon2 = weather.list[8].weather[0].icon;
   document.getElementById("icon2").src =
@@ -115,6 +121,10 @@ function renderFiveDayWeather(weather) {
   const formatted3 = month3 + "/" + day3 + "/" + year3;
   date3.textContent = formatted3;
 
+  const box3 = document.getElementById("box3");
+  box3.classList.add("border");
+  box3.classList.add("border-light");
+
   var icon3 = weather.list[16].weather[0].icon;
   document.getElementById("icon3").src =
     "http://openweathermap.org/img/wn/" + icon3 + "@2x.png";
@@ -131,6 +141,10 @@ function renderFiveDayWeather(weather) {
   const day4 = weather.list[24].dt_txt.substr(8, 2);
   const formatted4 = month4 + "/" + day4 + "/" + year4;
   date4.textContent = formatted4;
+
+  const box4 = document.getElementById("box4");
+  box4.classList.add("border");
+  box4.classList.add("border-light");
 
   var icon4 = weather.list[24].weather[0].icon;
   document.getElementById("icon4").src =
@@ -149,6 +163,10 @@ function renderFiveDayWeather(weather) {
   const formatted5 = month5 + "/" + day5 + "/" + year5;
   date5.textContent = formatted5;
 
+  const box5 = document.getElementById("box5");
+  box5.classList.add("border");
+  box5.classList.add("border-light");
+
   var icon5 = weather.list[32].weather[0].icon;
   document.getElementById("icon5").src =
     "http://openweathermap.org/img/wn/" + icon5 + "@2x.png";
@@ -163,16 +181,14 @@ function renderFiveDayWeather(weather) {
 function submitHandler() {
   event.preventDefault();
   var searchInput = searchBar.value.trim();
-
   if (searchInput) {
     fetchCurrentWeather(searchInput);
     fetchFiveDayWeather(searchInput);
-    // var recent = document.createElement('a');
-    // recent.classList = 'list-group-item border';
+    var recent = document.createElement("a");
+    recent.classList = "list-group-item border";
 
-    // recent.textContent = searchInput;
-    // console.log(searchInput);
-    // recentSearches.appendChild(recent);
+    recent.textContent = searchInput;
+    recentSearches.appendChild(recent);
   } else {
     alert("Please enter a valid city name");
   }
