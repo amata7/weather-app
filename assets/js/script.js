@@ -70,6 +70,13 @@ function fetchFiveDayWeather(query) {
 function fetchUV(data) {
   var uvCurrent = document.querySelector("#uvCurrent");
   uvCurrent.textContent = data.current.uvi;
+  if (data.current.uvi < 4) {
+    uvCurrent.classList.add("bg-success");
+  } else if (data.current.uvi < 8) {
+    uvCurrent.classList.add("bg-warning");
+  } else {
+    uvCurrent.classList.add("bg-danger");
+  }
 }
 
 function renderFiveDayWeather(weather) {
