@@ -4,6 +4,7 @@ var searchBtn = document.querySelector("#search");
 var searchBar = document.querySelector("#searchBar");
 var recentSearches = document.querySelector("#recentSearches");
 var icon1 = document.getElementById("icon1");
+var uvBox = document.getElementById("uvBox");
 
 function fetchCurrentWeather(query) {
   var url =
@@ -68,7 +69,7 @@ function fetchFiveDayWeather(query) {
 
 function fetchUV(data) {
   var uvCurrent = document.querySelector("#uvCurrent");
-  uvCurrent.textContent = "Current UV Index: " + data.current.uvi;
+  uvCurrent.textContent = data.current.uvi;
 }
 
 function renderFiveDayWeather(weather) {
@@ -186,15 +187,13 @@ function submitHandler() {
     fetchFiveDayWeather(searchInput);
     var recent = document.createElement("a");
     recent.onclick = function () {
-      console.log(this.textContent);
       fetchCurrentWeather(this.textContent);
       fetchFiveDayWeather(this.textContent);
     };
     recent.classList = "list-group-item border";
-
+    uvBox.classList = "d-block";
     recent.textContent = searchInput;
     recentSearches.appendChild(recent);
-    console.log(recent);
   } else {
     alert("Please enter a valid city name");
   }
