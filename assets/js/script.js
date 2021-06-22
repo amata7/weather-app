@@ -185,10 +185,16 @@ function submitHandler() {
     fetchCurrentWeather(searchInput);
     fetchFiveDayWeather(searchInput);
     var recent = document.createElement("a");
+    recent.onclick = function () {
+      console.log(this.textContent);
+      fetchCurrentWeather(this.textContent);
+      fetchFiveDayWeather(this.textContent);
+    };
     recent.classList = "list-group-item border";
 
     recent.textContent = searchInput;
     recentSearches.appendChild(recent);
+    console.log(recent);
   } else {
     alert("Please enter a valid city name");
   }
